@@ -87,8 +87,8 @@ import _ from "lodash";
 
 // 배열
 // .length
-const number = [1, 2, 3, 4];
-const fruits = ["Apple", "Banana", "cherry"];
+const numbers = [1, 2, 3, 4];
+const fruits = ["Apple", "Banana", "Cherry"];
 
 // console.log(number.length);
 // console.log(fruits.length);
@@ -101,13 +101,57 @@ const fruits = ["Apple", "Banana", "cherry"];
 // console.log(fruits)
 
 // .forEach()
-const f = fruits.forEach((fruits, idx) => console.log(`${fruits}-${idx}`));
-const m = fruits.map((fruits, idx) => `${fruits}-${idx}`);
-const o = fruits.map((fruits, idx) => ({
-  id: idx,
-  name: fruits,
-}));
+// const f = fruits.forEach((fruits, idx) => console.log(`${fruits}-${idx}`));
+// const m = fruits.map((fruits, idx) => `${fruits}-${idx}`);
+// const o = fruits.map((fruits, idx) => ({
+//   id: idx,
+//   name: fruits,
+// }));
 
-console.log(f);
-console.log(m);
-console.log(o);
+// console.log(f);
+// console.log(m);
+// console.log(o);
+
+// .filter()
+const a = numbers.map(number => numbers < 3)
+console.log(a)
+
+const b = numbers.filter(number => numbers < 3)
+console.log(b)
+console.log(numbers)
+
+// .find() .findIndex()
+const f = fruits.find(fruit => /^C/.test(fruit))
+const fi = fruits.findIndex(fruit => /^C/.test(fruit))
+console.log(f)
+console.log(fi)
+
+// .includes()
+const i = numbers.includes(3)
+console.log(i)
+
+const ic = fruits.includes('Melon')
+console.log(ic)
+
+// .push() .unshift()
+// 원본 수정됨 주의!
+numbers.push(5)
+console.log(numbers)
+
+numbers.unshift(0)
+console.log(numbers)
+
+// .reverse()
+// 원본 수정됨 주의!
+// numbers.reverse()
+// fruits.reverse()
+// console.log(numbers)
+// console.log(fruits)
+
+// .splice()
+// 원본 수정됨 주의!
+numbers.splice(5, 1, 999)
+console.log(numbers)
+
+fruits.splice(2, 0, 'Orange')
+console.log(fruits)
