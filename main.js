@@ -85,10 +85,10 @@ import _ from "lodash";
 // console.log('반올림 -> Math.round(3.53): ', Math.round(3.53))
 // console.log('임의값(난수) -> Math.random(): ', Math.random())
 
-// 배열
+/** 배열 */
 // .length
-const numbers = [1, 2, 3, 4];
-const fruits = ["Apple", "Banana", "Cherry"];
+// const numbers = [1, 2, 3, 4];
+// const fruits = ["Apple", "Banana", "Cherry"];
 
 // console.log(number.length);
 // console.log(fruits.length);
@@ -113,33 +113,33 @@ const fruits = ["Apple", "Banana", "Cherry"];
 // console.log(o);
 
 // .filter()
-const a = numbers.map(number => numbers < 3)
-console.log(a)
+// const a = numbers.map(number => numbers < 3)
+// console.log(a)
 
-const b = numbers.filter(number => numbers < 3)
-console.log(b)
-console.log(numbers)
+// const b = numbers.filter(number => numbers < 3)
+// console.log(b)
+// console.log(numbers)
 
 // .find() .findIndex()
-const f = fruits.find(fruit => /^C/.test(fruit))
-const fi = fruits.findIndex(fruit => /^C/.test(fruit))
-console.log(f)
-console.log(fi)
+// const f = fruits.find(fruit => /^C/.test(fruit))
+// const fi = fruits.findIndex(fruit => /^C/.test(fruit))
+// console.log(f)
+// console.log(fi)
 
 // .includes()
-const i = numbers.includes(3)
-console.log(i)
+// const i = numbers.includes(3)
+// console.log(i)
 
-const ic = fruits.includes('Melon')
-console.log(ic)
+// const ic = fruits.includes('Melon')
+// console.log(ic)
 
 // .push() .unshift()
 // 원본 수정됨 주의!
-numbers.push(5)
-console.log(numbers)
+// numbers.push(5)
+// console.log(numbers)
 
-numbers.unshift(0)
-console.log(numbers)
+// numbers.unshift(0)
+// console.log(numbers)
 
 // .reverse()
 // 원본 수정됨 주의!
@@ -150,8 +150,122 @@ console.log(numbers)
 
 // .splice()
 // 원본 수정됨 주의!
-numbers.splice(5, 1, 999)
-console.log(numbers)
+// numbers.splice(5, 1, 999)
+// console.log(numbers)
 
-fruits.splice(2, 0, 'Orange')
-console.log(fruits)
+// fruits.splice(2, 0, 'Orange')
+// console.log(fruits)
+
+/** Object */
+// .assign()
+// const target = { a: 1, b: 2 };
+// const source = { b: 4, c: 5 };
+
+// const returnTarget = Object.assign(target, source);
+// console.log(target);
+// console.log(returnTarget);
+
+// const userAge = {
+//   name: "Heropy",
+//   age: 35,
+// };
+// const userEmail = {
+//   name: "Heropy",
+//   email: "thesecon@gmail.com",
+// };
+
+// const targetVal = Object.assign({}, userAge, userEmail);
+// console.log(userAge);
+// console.log(userEmail);
+// console.log(targetVal);
+// console.log(targetVal === userAge);
+
+// const a = { k: 123 };
+// const b = { k: 123 };
+// console.log(a === b);
+
+// const c = Object.assign(a, b);
+// console.log(c);
+// console.log(c === a);
+// console.log(c === b);
+
+// .keys()
+// const user = {
+//   name: 'HwangSeungil',
+//   age: 53,
+//   email: 'hanail1125@gmail.com',
+// }
+
+// const keys = Object.keys(user)
+// console.log(keys)
+// console.log(keys[0]) // 배열데이터의 인텍싱방법
+// console.log(user['email']) // 객체데이터의 인텍싱방법
+
+// const values = keys.map(key => user[key])
+// console.log(values)
+
+/** 구조 분해 할당(Destructuring assingnment) */
+// 비구조화 할당
+// const user = {
+//   name: '하나일',
+//   age: 55,
+//   email: 'hanail1125@gmail.com',
+//   address: 'USA'
+// }
+// const {name: Nikname, age, email, address='Korea'} = user
+
+// console.log(`사용자의 이름은 ${Nikname}`)
+// console.log(`${name}님의 나이는 ${age}세입니다.`)
+// console.log(`${name}님의 이메일 주소는 ${email}입니다.`)
+// console.log(address)
+
+// const fruits = ['Apple', 'Banana', 'Cherry']
+// const [, , b] = fruits
+// console.log(b)
+
+/** 전개 연산자(Spread) */
+// const fruits = ["Apple", "Banana", "Cherry", "Orange"];
+// console.log(fruits);
+// console.log(...fruits);
+
+// const toObject = (a, b, ...c) => ({ a, b, c })
+// console.log(toObject(...fruits));
+
+/** 데이터 불변성(Immutability) */
+// 원시 데이터: String, Number, Boolean, undefined, null
+// 참조형 데이터: Object, Array, function
+// let a = { k: 1 };
+// let b = { k: 1 };
+// console.log(a, b, a === b)
+// a.k = 7
+// b = a
+// console.log(a, b, a === b)
+// a.k = 2
+// console.log(a, b, a === b)
+// let c = b
+// console.log(a, b, c, a === c)
+// a.k = 9
+// console.log(a, b, c, a === c)
+
+/** 얕은 복사(Shallow copy), 깊은 복사(Deep copy) */
+// const user = {
+//   name: "하나일",
+//   age: 55,
+//   email: ["hanail1125@gmail.com"],
+// }
+// console.log('user', user)
+
+// // const copyUser = Object.assign({}, user) //얕은 복사
+// // const copyUser = {...user} // 얕은 복사
+// const copyUser = _.cloneDeep(user) // 깊은복사(lodash 활용)
+
+// console.log(copyUser === user)
+
+// user.age = 20
+// console.log('user', user)
+// console.log('copyUser', copyUser)
+
+// user.email.push('hsi05200@gmail.com')
+// console.log('user', user)
+// console.log('copyUser', copyUser)
+// console.log(user.email === copyUser.email)
