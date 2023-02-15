@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 // console.log('Hello, world')
 // console.log(_.camelCase('Hello, world'))
 
@@ -269,3 +267,81 @@ import _ from "lodash";
 // console.log('user', user)
 // console.log('copyUser', copyUser)
 // console.log(user.email === copyUser.email)
+
+
+import getType from "./getType";
+import { random, user as hanail } from "./getRandom";
+import * as R from './getRandom'
+
+
+// console.log(_.camelCase("the hello world"));
+// console.log(getType([1, 2, 3]));
+// console.log(random(), random());
+// console.log(R);
+
+/** lodash 패키지 사용법 */
+// import _ from 'lodash'
+
+// const usersA = [
+//   {userId: '1', name: 'HEROPY' },
+//   {userId: '2', name: 'Neo'},
+// ]
+// const usersB = [
+//   {userId: '1', name: 'HEROPY' },
+//   {userId: '3', name: 'Amy'},
+// ]
+// const usersC = usersA.concat(usersB)
+// console.log('concat', usersC)
+// console.log('uniqBy', _.uniqBy(usersC, 'userId'))
+
+// const usersD = _.unionBy(usersA, usersB, 'userId')
+// console.log('unionBy', usersD)
+
+// const users = [
+//   {userId: '1', name: 'HEROPY'},
+//   {userId: '2', name: 'Neo'},
+//   {userId: '3', name: 'Amy'},
+//   {userId: '4', name: 'Evan'},
+//   {userId: '5', name: 'Lewis'},
+// ]
+
+// const foundUser = _.find(users, {name: 'Amy'})
+// const foundUserIndex = _.findIndex(users, {name: 'Amy'})
+// console.log(foundUser)
+// console.log(foundUserIndex)
+
+// _.remove(users, {name: 'HEROPY'})
+// console.log(users)
+
+/** JSON */
+// const user = {
+//   name: 'Hwang Seungil',
+//   age: 55,
+//   email: [
+//     'hanail1125@gmail.com',
+//     'hsi05200@gmail.com'
+//   ],
+//   companyName: 'CNN'
+// }
+// console.log('user', user)
+
+// const str = JSON.stringify(user)
+// console.log('str', str)
+// console.log(typeof str)
+
+// const obj = JSON.parse(str)
+// console.log('obj', obj)
+
+
+// localStorage.setItem('user', JSON.stringify(user))
+
+// const str = localStorage.getItem('user')
+// const obj = JSON.parse(str)
+// obj.age = 41
+
+// document.write(obj.age, '세')
+
+// localStorage.setItem('user', JSON.stringify(obj))
+
+/** OMDb API 사용법 */
+// http://www.omdbapi.com/?apikey=7035c60c&s=frozen
